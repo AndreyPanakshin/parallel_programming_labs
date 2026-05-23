@@ -92,12 +92,11 @@
 ## График зависимости времени выполнения от количества потоков
 
 <p align="center">
-  <img src="file2.png" width="240">
-  <img src="file3.png" width="240">
-  <img src="file4.png" width="240">
-  <img src="file5.png" width="240">
-  <br>
-  <em>Зависимость времени выполнения от количества потоков</em>
+<img src="file2.png" width="700"><br><br>
+<img src="file3.png" width="700"><br><br>
+<img src="file4.png" width="700"><br><br>
+<img src="file5.png" width="700"><br><br>
+<em>Зависимость времени выполнения от количества потоков</em>
 </p>
 
 
