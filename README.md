@@ -30,7 +30,7 @@ python --version
 # Установка NumPy
 pip install numpy
 
-# Процесс проверки
+## Процесс проверки
 1. C++ программа умножает матрицы и сохраняет результат в `result_matrix.txt`
 2. `check_result.py` читает входные матрицы из `matrix_data.txt`
 3. NumPy вычисляет эталонное произведение (A × B)
