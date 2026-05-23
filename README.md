@@ -20,15 +20,12 @@
 - Python 3.x с установленным пакетом `numpy`
 
 ## Зависимости
-```bash
--Проверка g++
-g++ --version
-
--Проверка Python
-python --version
-
--Установка NumPy
-pip install numpy
+- Проверка g++  
+  `g++ --version`
+- Проверка Python  
+  `python --version`
+- Установка NumPy  
+  `pip install numpy`
 
 ## Компиляция
 - `build.bat`
