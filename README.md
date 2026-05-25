@@ -82,10 +82,10 @@ nvcc --version
 
 # Графики зависимостей
 <p align="center">
-<img src="image1.png" width="700"><br><br>
-<img src="image2.png" width="700"><br><br>
-<img src="image3.png" width="700"><br><br>
-<img src="image4.png" width="700"><br><br>
+<img src="file1.png" width="700"><br><br>
+<img src="file2.png" width="700"><br><br>
+<img src="file3.png" width="700"><br><br>
+<img src="file4.png" width="700"><br><br>
 <em>Зависимость времени выполнения и производительности от конфигурации блока и размера матрицы</em>
 </p>
 
