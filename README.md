@@ -21,6 +21,7 @@
 sudo apt update
 sudo apt install -y openmpi-bin libopenmpi-dev python3 python3-pip
 pip3 install numpy matplotlib
+```
 
 ## Сборка
 - `make all`
