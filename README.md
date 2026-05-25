@@ -1,6 +1,6 @@
 # Лабораторная работа №3: Параллельное перемножение матриц (MPI)
 
-## 📋 Описание файлов
+## Описание файлов
 
 | Файл | Назначение |
 |------|------------|
@@ -16,7 +16,8 @@
 # Запуск программы
 
 ## Требования
-#Ubuntu / Debian
+```bash
+# Ubuntu/Debian
 sudo apt update
 sudo apt install -y openmpi-bin libopenmpi-dev python3 python3-pip
 pip3 install numpy matplotlib
