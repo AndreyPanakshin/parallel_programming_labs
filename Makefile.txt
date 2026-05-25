@@ -1,0 +1,40 @@
+CXX = mpicxx
+CXXFLAGS = -O3 -std=c++11 -march=native
+TARGET = matrix_mpi
+SOURCE = matrix_mpi.cpp
+
+.PHONY: all clean prepare run-all graphs deps
+
+all: $(TARGET)
+
+$(TARGET): $(SOURCE)
+	$(CXX) $(CXXFLAGS) -o $@ $<
+
+prepare:
+	mkdir -p data output
+
+run-all: $(TARGET)
+	bash benchmark.sh
+
+graphs:
+	python3 draw_graphs.py
+
+deps:
+	sudo apt update
+	sudo apt install python3-numpy python3-matplotlib -y
+
+clean:
+	rm -f $(TARGET)
+	rm -rf data/*.txt output/*.txt
+	rm -f results.csv *.png .tmp_output
+
+# Быстрая проверка
+check: $(TARGET) prepare
+	mpirun --allow-run-as-root -n 1 ./$(TARGET) gen data/matrices.txt 100
+	mpirun --allow-run-as-root -n 2 ./$(TARGET) calc data/matrices.txt output/result.txt
+	python3 check_result.py data/matrices.txt output/result.txt
+
+# Запуск всех экспериментов
+experiment: clean prepare $(TARGET)
+	bash benchmark.sh
+	python3 draw_graphs.py
