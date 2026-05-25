@@ -16,22 +16,20 @@
 # Запуск программы
 
 ## Требования
-
-```bash
 # Ubuntu / Debian
-- sudo apt update
-- sudo apt install -y openmpi-bin libopenmpi-dev python3 python3-pip
-- pip3 install numpy matplotlib
+sudo apt update
+sudo apt install -y openmpi-bin libopenmpi-dev python3 python3-pip
+pip3 install numpy matplotlib
 
-## Сборка и запуск
+## Сборка
+- `make all`
 
-### Команды для работы с проектом
+## Запуск тестов
+- `make run-all`
 
-```bash
-make all          # Сборка проекта
-make run-all      # Запуск тестов
-make graphs       # Построение графиков
-make experiment   # Полное тестирование + графики
-make check        # Быстрая проверка корректности
-make clean        # Очистка временных файлов
+## Построение графиков
+- `make graphs`
+
+## Полное тестирование
+- `make experiment`
 
