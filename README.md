@@ -86,7 +86,6 @@ nvcc --version
 <img src="file2.png" width="700"><br><br>
 <img src="file3.png" width="700"><br><br>
 <img src="file4.png" width="700"><br><br>
-<em>Зависимость времени выполнения и производительности от конфигурации блока и размера матрицы</em>
 </p>
 
 # Выводы по Лабораторной работе №4(CUDA)
