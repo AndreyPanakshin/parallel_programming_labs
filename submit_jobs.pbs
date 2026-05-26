@@ -1,0 +1,31 @@
+#!/bin/bash
+#SBATCH --job-name=mpi_all
+#SBATCH --time=02:00:00
+#SBATCH --ntasks=8
+#SBATCH --partition=batch
+#SBATCH --output=mpi_all.out
+#SBATCH --error=mpi_all.err
+
+module purge
+module load intel/mpi4
+
+echo "matrix_size,processes,time_ms" > results.csv
+
+for n in 200 400 800 1200 1600 2000
+do
+    python generate_matrices.py $n
+
+    for p in 1 2 4 8
+    do
+        echo "Running size=$n processes=$p"
+
+        mpirun -np $p ./mpi_matrix_mult > tmp_run.out 2>&1
+
+        time_ms=`grep "Execution time (ms):" tmp_run.out | awk '{print $4}'`
+
+        echo "$n,$p,$time_ms" >> results.csv
+    done
+done
+
+echo "Done"
+cat results.csv

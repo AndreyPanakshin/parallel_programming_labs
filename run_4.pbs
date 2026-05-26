@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name=mpi4
+#SBATCH --time=00:10:00
+#SBATCH --ntasks=4
+#SBATCH --partition=batch
+#SBATCH --output=mpi4.out
+#SBATCH --error=mpi4.err
+
+module purge
+module load intel/mpi4
+
+mpirun -np 4 ./mpi_matrix_mult

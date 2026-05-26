@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name=mpi1
+#SBATCH --time=00:10:00
+#SBATCH --ntasks=1
+#SBATCH --partition=batch
+#SBATCH --output=mpi1.out
+#SBATCH --error=mpi1.err
+
+module purge
+module load intel/mpi4
+
+mpirun -np 1 ./mpi_matrix_mult
